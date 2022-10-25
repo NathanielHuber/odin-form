@@ -6,49 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css"/>
+    <script defer>
+        function checkPassword() {
+            let pass1 = document.getElementById("password1")
+            console.log(pass1)
+            let pass2 = document.getElementById("password2")
+            console.log(pass2)
+            if (pass1.value == pass2.value) {
+                pass1.classList.remove("invalid")
+                pass2.classList.remove("invalid")
+            } else {
+                pass1.classList.add("invalid")
+                pass2.classList.add("invalid")
+            }
+            console.log("worked")
+
+        }
+
+    </script>
 </head>
 <body>
     <div id="root">
         <div id="left">
             <div>
                 <img id="logo" src="./assets/odin-lined.png" alt="Odin Logo"/>
-                <h1>Odin<h1>
+                <p id="title">Odin<p>
             </div>
         </div>
         <div id="right">
-            <div id="hero">
+            <div id="right1">
                 <div>
                     <h3>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.<br>Sign up <em>now</em> to get started!</h3>
                     <h3>You <em>know</em> you want to.</h3>
                 </div>
             </div>
-            <form action="">
-                    <div id="input">
-                            <label for="first-name">First Name</label>
-                            <input type="text" id="first-name">
+            <div id="right2">
+                <h3>Let's do this!</h3>
+                <form action="">
+                    <div id="leftColumn">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" required>
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
                     </div>
-                    <div id="input">
-                            <label for="last-name">Last Name</label>
-                            <input type="text" id="last-name">
+                    <div id="rightColumn">
+                        <label for="phone">Phone number</label>
+                        <input type="tel" id="phone" required>
+                        <label for="password">Password</label>
+                        <input type="password" id="password1" required>
+                        <label for="password">Confirm Password</label>
+                        <input type="password"  id="password2" required>
                     </div>
-                    <div id="input">
-                            <label for="email">Email</label>
-                            <input type="email" id="email">
-                    </div>
-                    <div id="input">
-                            <label for="phone">Phone number</label>
-                            <input type="tel" id="phone">
-                    </div>
-                    <div id="input">
-                            <label for="password">Password</label>
-                            <input type="password" id="password">
-                    </div>
-                    <div id="input">
-                            <label for="password">Confirm Password</label>
-                            <input type="password"  id="password">
-                    </div>
-            </form>
-            <p>Already have an account? <a href="">Log in.</a>
+                </form>
+            </div>
+            <div id="right3">
+                <button onclick="checkPassword()" id="button-createAccount">Create Account</button>
+                <p>Already have an account? <a href="">Log in.</a>
+            </div>
         </div>
     </div>
 </body>
